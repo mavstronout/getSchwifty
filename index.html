@@ -6,6 +6,7 @@
     <title>Star Sprite Clicker</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src='./js/main.js'></script>
@@ -13,13 +14,108 @@
 </head>
 <body>
     <!-- Create start screen -->
+    <div id="intro" class="container">
+        <div id="title" class="item question" style="display: block">
+            Clicker Brawl
+        </div>
+        <div id="startg">
+            <h1>Clicker Classic</h1>
+            <button title="fight" onclick="startGame()" id="startbtn" class="menu-btn">F I G H T</button>
+            <h1>Bonus Modes</h1>
+            <button title="very easy" onclick="chooseDif1()">Strategy Mode (turn based)</button><br>
+            <button title="not difficult" onclick="chooseDif2()">Survival (eliminate all enemies)</button><br>
+        </div>
+        
+    </div>
 
     <!-- Hidden, by comment or by css? Instructions screen -->
 
-    <!-- Hidden Game Screen -->
+    
+    
+    <div id="startButton" style="display: none">
+
+        <h1>Click to Win.</h1>
+        <button onclick="start()">Start</button>
+        <p>Rules: Movement buttons or arrow keys to move.<br>
+            Try not to get cornered.<br>
+            Eliminate the enemies before the clock runs out.</p>
+
+    </div>
+
+    <!-- Audio Control Buttons -->
+
+    <div id="flexcont">
+        <div class="ritem">
+            <button class="btn play-button" id ="play-button"><i class="far fa-play-circle"></i></p>
+        </div>
+        <div class="ritem">
+            <button class="btn mute-button" id ="mute-button"><i class="far fa-pause-circle"></i></p>
+        </div>
+    </div>
+    
+
+    
+    <!-- Hidden Game Screen, needs updating -->
+
+    <div id="mainGame" style="display: none">
+
+    <p class="question" id="question"></p>
+
+    <input type="text" id="guess" maxlength="1">
+
+    <div>
+        <button onclick="enterGuess()">Enter Guess</button>
+    </div>
+
+    </div>
+
+    <div id="RRguess" style="display: block">
+
+    <p class="btn" id="rightGuess"></p>
+    <div id="flexcont">
+        <div class="ritem">
+            <p class="btn" id ="wrongGuess"></p>
+        </div>
+        <div class="ritem">
+            <p class="btn" id ="guessesLeft"></p>
+        </div>
+    </div>
+    </div>
+
+    
+    
+        
 
     <!-- Hidden Game Over Screen -->
+        
     
+        <div id="youLose" class="btn" style="display: none">
+        
+            <h1>You lose, good day sir.</h1>
+
+            <div>
+                <button onclick="restart()">Play again?</button>
+            </div>
+
+            <p id="correctWordWas"></p>
+
+        </div>
+
+        <div id="youWin" class="btn" style="display: none">
+
+            <h2>Test of Mouse: Complete.<br>
+                You are licensed for clicking.</h2>
+
+            <div>
+                <button onclick="restart()">Play again?</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- Start Javascript functions, separate this code to js/main.js later -->
+
     <script>
     // Constructors and Objects for Fighters
 
@@ -29,13 +125,30 @@
 
     // Turn Order
 
-    // Game Over Timer using setTimeout();    
+    // Time Over- Game End HTML; Create JS Timer using setTimeout() standard function;    
         
     // Game Start
 
     // Instructions Screen
 
     // Create grid (show HTML elements)
+
+
+    // Game Audio, leave this here for later
+
+    $(document).ready(function() {
+        var audioElement = document.createElement("audio");
+        audioElement.setAttribute("src", "./assets/audio/EP1__Duel_Of_The_Fates__ver-1.mid");
+        $("#play-button").on("click", function() {
+            audioElement.play();
+            console.log('audio on');
+        });
+        $("#mute-button").on("click", function() {
+            audioElement.pause();
+            console.log('audio off');
+        });
+    });
+
 
     </script>
 </body>
