@@ -98,7 +98,21 @@
 
     <div>
         <!-- Create functions for actions and organize these elements here -->
-        <button onclick="enterGuess()"> Attack icon</button>
+        <div class="flex-row">
+            <div class="row-item" id="blank"></div>
+            <div class="row-item" id="up"><button class="btn" onclick="enterGuess()"> up icon</button></div>
+            <div class="row-item" id="blank"></div>
+        </div>
+        <div class="flex-row">
+            <div class="row-item" id="left"><button class="btn" onclick="enterGuess()"> left icon</button></div>
+            <div class="row-item" id="attack"><button class="btn" onclick="enterGuess()"> Attack icon</button></div>
+            <div class="row-item" id="right"><button class="btn" onclick="enterGuess()"> right icon</button></div>
+        </div>
+        <div class="flex-row">
+            <div class="row-item" id="blank"></div>
+            <div class="row-item" id="down"><button class="btn" onclick="enterGuess()"> down icon</button></div>
+            <div class="row-item" id="blank"></div>
+        </div>
     </div>
 
     </div>
