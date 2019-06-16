@@ -106,3 +106,29 @@ body {
   #ritem {
     flex-shrink: 6;
   }
+
+  #flex-column {
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 10%;
+    height: auto;
+  }
+
+  #flex-row {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 15%;
+    width: auto;
+  }
+
+  #col-item {
+    width: auto;
+    height: auto;
+  }
+
+  #row-item {
+    width: auto;
+    height: auto;
+  }
