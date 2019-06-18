@@ -11,19 +11,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src='./js/main.js'></script>
     <script src='./js/reset.js'></script>
+    <script src="https://kit.fontawesome.com/0a4035d3a2.js"></script>
+
 </head>
 <body>
     <!-- Create start screen -->
     <div id="intro" class="container">
-        <div id="title" class="item question" style="display: block">
-            Clicker Brawl
+        <div id="title" class="item question">
+            <h1>Clicker Brawl</h1>
         </div>
         <div id="startg">
             <h1>Clicker Classic</h1>
-            <button title="fight" onclick="startGame()" id="startbtn" class="menu-btn">F I G H T</button>
+            <button title="fight" onclick="chooseGame1()" id="startButton" class="menu-btn">F I G H T</button>
             <h1>Bonus Modes</h1>
-            <button title="very easy" onclick="chooseDif1()">Strategy Mode (turn based)</button><br>
-            <button title="not difficult" onclick="chooseDif2()">Survival (eliminate all enemies)</button><br>
+            <button title="very easy" onclick="chooseGame2()">Strategy Mode (turn based)</button><br>
+            <button title="not difficult" onclick="chooseGame3()">Survival (eliminate all enemies)</button><br>
         </div>
         
     </div>
@@ -60,78 +62,79 @@
     <div id="mainGame" style="display: none">
         <!-- Create div elements for a flexbox grid of columns and rows -->
         <div class="flex-row" value="1" title="y">
-            <div class="row-item" value="-1" title="x"></div>
-            <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
-            <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
+            <div class="row-item" id="top-left" value="-1" title="x"></div>
+            <div class="row-item" id="semi-left" value="-0.5" title="x"></div>
+            <div class="row-item" id="mid" value="0" title="x"></div>
+            <div class="row-item" id="semi-right" value="0.5" title="x"></div>
+            <div class="row-item" id="top-right" value="1" title="x"></div>
         </div>
         <div class="flex-row" value="0.5" title="y">
-            <div class="row-item" value="-1" title="x"></div>
+            <div class="row-item" id="semi-left" value="-1" title="x"></div>
             <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
+            <div class="row-item" id="semi-mid" value="0" title="x"></div>
             <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
+            <div class="row-item" id="semi-right" value="1" title="x"></div>
         </div>
         <div class="flex-row" value="0" title="y">
-            <div class="row-item" value="-1" title="x"></div>
+            <div class="row-item" id="left" value="-1" title="x"></div>
             <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
+            <div class="row-item" id="mid" value="0" title="x"></div>
             <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
+            <div class="row-item" id="right" value="1" title="x"></div>
         </div>
         <div class="flex-row" value="-0.5" title="y">
-            <div class="row-item" value="-1" title="x"></div>
+            <div class="row-item" id="n-semi-left" value="-1" title="x"></div>
             <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
+            <div class="row-item" id="n-semi-mid" value="0" title="x"></div>
             <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
+            <div class="row-item" id="n-semi-right" value="1" title="x"></div>
         </div>
         <div class="flex-row" value="-1" title="y">
-            <div class="row-item" value="-1" title="x"></div>
-            <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
-            <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
+            <div class="row-item" id="bottom-left" value="-1" title="x"></div>
+            <div class="row-item" id="n-semi-left" value="-0.5" title="x"></div>
+            <div class="row-item" id="bottom-mid" value="0" title="x"></div>
+            <div class="row-item" id="n-semi-right" value="0.5" title="x"></div>
+            <div class="row-item" id="bottom-right" value="1" title="x"></div>
         </div>
         
 
-    <div>
-        <!-- Create functions for actions and organize these elements here -->
-        <div class="flex-row">
-            <div class="row-item" id="blank"></div>
-            <div class="row-item" id="up"><button class="btn" onclick="enterGuess()"><i class="fas fa-caret-up"></i></button></div>
-            <div class="row-item" id="blank"></div>
+        <div id="actions" style="display: block">
+            <!-- Create functions for actions and organize these elements here -->
+            <div class="flex-row">
+                <div class="a-row-item" id="blank"></div>
+                <div class="a-row-item" id="up"><button class="btn" onclick="moveUp()"><i class="fas fa-caret-up"></i></button></div>
+                <div class="a-row-item" id="blank"></div>
+            </div>
+            <div class="flex-row">
+                <div class="a-row-item" id="left"><button class="btn" onclick="moveLeft()"><i class="fas fa-caret-left"></i></button></div>
+                <div class="a-row-item" id="attack"><button class="btn" onclick="attack()"><i class="fal fa-axe"></i></button></div>
+                <div class="a-row-item" id="right"><button class="btn" onclick="moveRight()"><i class="fas fa-caret-right"></i></button></div>
+            </div>
+            <div class="flex-row">
+                <div class="a-row-item" id="blank"></div>
+                <div class="a-row-item" id="down"><button class="btn" onclick="moveDown()"><i class="fas fa-caret-down"></i></button></div>
+                <div class="a-row-item" id="blank"></div>
+            </div>
         </div>
-        <div class="flex-row">
-            <div class="row-item" id="left"><button class="btn" onclick="enterGuess()"><i class="fas fa-caret-left"></i></button></div>
-            <div class="row-item" id="attack"><button class="btn" onclick="enterGuess()"><i class="fal fa-axe"></i></button></div>
-            <div class="row-item" id="right"><button class="btn" onclick="enterGuess()"><i class="fas fa-caret-right"></i></button></div>
-        </div>
-        <div class="flex-row">
-            <div class="row-item" id="blank"></div>
-            <div class="row-item" id="down"><button class="btn" onclick="enterGuess()"><i class="fas fa-caret-down"></i></button></div>
-            <div class="row-item" id="blank"></div>
-        </div>
-    </div>
 
-    </div>
-
-    <!-- Add html/css/js elements which display game-round information.
+        
+        <!-- Add html/css/js elements which display game-round information.
             * Enemies remaining, health, damage, defense -->
 
-    <div class="flex-column" id="inventory" style="display: block">
-        <div class="col-item" id="name" value="player"><p>Yoda</p></div>
-        <div class="col-item" id="health" value="hp"><i class="fas fa-heartbeat"></i> <p id="life">100</p></div>
-        <div class="col-item" id="damage" value="dmg"><i class="fal fa-axe"></i> <p id="dmg">Damage: 5</p></div>
-        <div class="col-item" id="defense" value="def"><i class="fas fa-shield-alt"></i> <p id="def">Defense: 5 </p></div>
+        <div class="flex-column" id="inventory" style="display: block" >
+            <div class="col-item" id="name" value="player"><p>Yoda</p></div>
+            <div class="col-item" id="health" value="hp"><i class="fas fa-heartbeat"></i> <p id="life">100</p></div>
+            <div class="col-item" id="damage" value="dmg"><i class="fal fa-axe"></i> <p id="dmg">Damage: 5</p></div>
+            <div class="col-item" id="defense" value="def"><i class="fas fa-shield-alt"></i> <p id="def">Defense: 5 </p></div>
+        </div>
+        <div class="flex-column" id="inventory" style="display: block">
+            <div class="col-item" id="enemy-name" value="Enemy"><p></p></div>
+            <div class="col-item" id="health" value="hp"><i class="fas fa-heartbeat"></i> <p id="life">100</p></div>
+            <div class="col-item" id="damage" value="dmg"><i class="fal fa-axe"></i> <p id="dmg">Damage: 5</p></div>
+            <div class="col-item" id="defense" value="def"><i class="fas fa-shield-alt"></i> <p id="def">Defense: 5 </p></div>
+        </div>
     </div>
-    <div class="flex-column" id="inventory" style="display: block">
-        <div class="col-item" id="enemy-name" value="Enemy"><p></p></div>
-        <div class="col-item" id="health" value="hp"><i class="fas fa-heartbeat"></i> <p id="life">100</p></div>
-        <div class="col-item" id="damage" value="dmg"><i class="fal fa-axe"></i> <p id="dmg">Damage: 5</p></div>
-        <div class="col-item" id="defense" value="def"><i class="fas fa-shield-alt"></i> <p id="def">Defense: 5 </p></div>
-    </div>
+
 
     <!-- To be depracated from previous template
     <div id="RRguess" style="display: block"> 
@@ -207,7 +210,7 @@
 
     $(document).ready(function() {
         var audioElement = document.createElement("audio");
-        audioElement.setAttribute("src", "./assets/audio/EP1__Duel_Of_The_Fates__ver-1.mid");
+        audioElement.setAttribute("src", "./assets/audio/Star-Wars-Duel-of-the-Fates.mp3");
         $("#play-button").on("click", function() {
             audioElement.play();
             console.log('audio on');

@@ -1,63 +1,59 @@
 body {
-    background-color: darkgrey;
+    background-image: url('../images/battleground.jpg');
     background-size: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%)translateY(-50%);
+    /* position: absolute; */
+    top: 100%;
+    left: 100%;
+    /* transform: translateX(-50%)translateY(-50%); */
     text-align: center;
-  }
+}
 
   .container {
       height: auto;
       width: 100%;
-      min-width: 400px;
-      max-width: 400px;
+      /* min-width: 400px;
+      max-width: 400px; */
       background: radial-gradient(cornflowerblue, #3557ce80);
       font: gold;
+  }
+
+  .startg {
+    text-align: center;
+
   }
   
   h1 {
     font-family: 'Cinzel', serif;
-    font-size: 42px;
-    color: #ffffff;
+    font-size: 24px;
+    color: lightyellow;
     padding: 13px;
   }
 
    #maingame {
     font-family: 'Cinzel', serif;
-    font-size: 42px;
+    font-size: 24px;
     padding: 13px;
     margin: 10px;
-    color: #ffffff;
+    color: lightyellow;
   }
 
-  input {
-      height: 70px;
-      width: 42px;
-      border: none;
-      text-align: center;
-      font-size: 66px;
-      font-family: 'Cinzel', serif;
-  }
-  
   h2 {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
+    font-size: 24px;
     padding: 7px;
     color: #ffffff;
   }
 
   h5 {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
+    font-size: 24px;
     padding: 7px;
     color: #ffffff;
   }
 
   #startButton {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
+    font-size: 24px;
     padding: 7px;
     margin: 10px;
     color: #ffffff;
@@ -65,14 +61,14 @@ body {
 
   p {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
+    font-size: 24px;
     padding: 7px;
     color: #ffffff;
   }
 
   .question {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
+    font-size: 24px;
     padding: 7px;
     color: #ffffff;
   }
@@ -87,7 +83,9 @@ body {
     font-size: 32px;
     padding: 10px;
     margin: 5px;
+    width: 100%;
     color: #ffffff;
+    display: inline-block;
   }
 
   .btn {
@@ -111,7 +109,7 @@ body {
     display: flex; /* or inline-flex */
     flex-direction: column;
     justify-content: space-evenly;
-    width: 10%;
+    width: 30%;
     height: auto;
   }
 
@@ -119,8 +117,8 @@ body {
     display: flex; /* or inline-flex */
     flex-direction: row;
     justify-content: space-evenly;
-    height: 15%;
-    width: auto;
+    height: auto;
+    width: 100%;
   }
 
   #col-item {
@@ -129,6 +127,13 @@ body {
   }
 
   #row-item {
-    width: auto;
+    width: 20%;
+    height: auto;
+    border: 3px #dbdbdb;
+    
+  }
+  
+  #a-row-item {
+    width: 20%;
     height: auto;
   }
