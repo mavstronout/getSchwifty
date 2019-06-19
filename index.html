@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Star Sprite Clicker</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src='./js/main.js'></script>
+    <!-- <script src='./js/reset.js'></script> -->
+</head>
+<body>
+
+    
+    <!-- Audio Control Buttons -->
+
+    <div id="flexcont">
+            <div class="ritem">
+                <button class="btn play-button" id ="play-button"><i class="far fa-play-circle"></i></p>
+            </div>
+            <div class="ritem">
+                <button class="btn mute-button" id ="mute-button"><i class="far fa-pause-circle"></i></p>
+            </div>
+        </div>
+        
+    <!-- Create start screen -->
+    <div id="intro" class="container"  style="display: block">
+        <div id="title" class="item question" style="display: block">
+            Rick and Morty Collector
+        </div>
+        <div id="startg">
+            <h1>Rules</h1>
+            <p>Click the crystals to get swhifty<br>
+                You win the game by matching your total score to the randomly selected goal number, you lose the
+                game if your total score goes above the random number.<br>
+                The value of each crystal is hidden from you until you click on it.<br>
+                Each time when the game starts, the game will change the values of each crystal and the goal number will be selected again.
+            </p>
+        </div>
+        
+   
+
+        <!-- Create functions for actions and organize these elements here -->
+        <div class="flex-column">
+            <div class="col-item"><h2> Goal Number: <div id="GoalNumber"></div></h2></div>
+            <div class="col-item"><h3>Current Crystal Total: <div id="totalscore"></div></h3></div>
+            <div class="col-item"><h3>Wins: <div id="Wins"></div></h3></div>
+            <div class="col-item"><h3>Losses: <div id="Losses"></div></h3></div>
+        </div>
+        <div class="flex-row">
+            <div class="row-item"><button class="buttons" id="defense"><img src="assets/images/Defense_Mega_Seed.png"></button></div>
+            <div class="row-item"><button class="buttons" id="speed"><img src="assets/images/Speed_Mega_Seed.png"></button></div>
+            <div class="row-item"><button class="buttons" id="mega-seed"><img src="assets/images/seeds-clipart-semilla-7.png"></button></div>
+            <div class="row-item"><button class="buttons" id="plumbus"><img src="assets/images/plumbus.jpg"></button></div>
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        var audioElement = document.createElement("audio");
+        audioElement.setAttribute("src", "./assets/audio/EP1__Duel_Of_The_Fates__ver-1.mid");
+        $("#play-button").on("click", function() {
+            audioElement.play();
+            console.log('audio on');
+        });
+        $("#mute-button").on("click", function() {
+            audioElement.pause();
+            console.log('audio off');
+        });
+
+    });
+
+
+    </script>
+</body>
+</html>
