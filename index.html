@@ -25,16 +25,17 @@
                 <button class="btn play-button" id ="play-button"><i class="far fa-play-circle"></i></p>
             </div>
             <div class="ritem">
+                <img src="assets/images/ram-logo.jpg">
+            </div>
+            <div class="ritem">
                 <button class="btn mute-button" id ="mute-button"><i class="far fa-pause-circle"></i></p>
             </div>
-        </div>
+    </div>
         
     <!-- Create start screen -->
-    <div id="intro" class="container"  style="display: block">
-        <div id="title" class="item question" style="display: block">
-            Rick and Morty Collector
-        </div>
-        <div id="startg">
+    <div id="intro" class="container">
+
+        <div id="startg ">
             <h1>Rules</h1>
             <p>Click the crystals to get swhifty<br>
                 You win the game by matching your total score to the randomly selected goal number, you lose the
@@ -43,30 +44,30 @@
                 Each time when the game starts, the game will change the values of each crystal and the goal number will be selected again.
             </p>
         </div>
+
         
    
 
         <!-- Create functions for actions and organize these elements here -->
-        <div class="flex-column">
-            <div class="col-item"><h2> Goal Number: <div id="GoalNumber"></div></h2></div>
-            <div class="col-item"><h3>Current Crystal Total: <div id="totalscore"></div></h3></div>
-            <div class="col-item"><h3>Wins: <div id="Wins"></div></h3></div>
-            <div class="col-item"><h3>Losses: <div id="Losses"></div></h3></div>
-        </div>
         <div class="flex-row">
-            <div class="row-item"><button class="buttons" id="defense"><img src="assets/images/Defense_Mega_Seed.png"></button></div>
-            <div class="row-item"><button class="buttons" id="speed"><img src="assets/images/Speed_Mega_Seed.png"></button></div>
-            <div class="row-item"><button class="buttons" id="mega-seed"><img src="assets/images/seeds-clipart-semilla-7.png"></button></div>
-            <div class="row-item"><button class="buttons" id="plumbus"><img src="assets/images/plumbus.jpg"></button></div>
+            <div class="row-item"><p>Goal Number: </p> <div id="GoalNumber"></div></div>
+            <div class="row-item"><p>Current Crystal Total:</p> <div id="totalscore"></div></div>
+            <div class="row-item"><p>Wins: </p> <div id="Wins"></div></div>
+            <div class="row-item"><p>Losses: </p> <div id="Losses"></div></div>
         </div>
-    </div>
+        <div class="flex-row morty">
+            <div class="row-item slippy"><button class="buttons" id="defense"><img class="seed" src="assets/images/Defense_Mega_Seed.png"></button></div>
+            <div class="row-item slippy"><button class="buttons" id="speed"><img class="seed" src="assets/images/Speed_Mega_Seed.png"></button></div>
+            <div class="row-item slippy"><button class="buttons" id="mega-seed"><img class="seed" src="assets/images/seeds-clipart-semilla-7.png"></button></div>
+            <div class="row-item slippy"><button class="buttons" id="plumbus"><img class="seed" src="assets/images/plumbus.jpg"></button></div>
+        </div>
 
     </div>
 
     <script>
     $(document).ready(function() {
         var audioElement = document.createElement("audio");
-        audioElement.setAttribute("src", "./assets/audio/EP1__Duel_Of_The_Fates__ver-1.mid");
+        audioElement.setAttribute("src", "./assets/audio/get_schwifty.mp3");
         $("#play-button").on("click", function() {
             audioElement.play();
             console.log('audio on');
@@ -74,6 +75,15 @@
         $("#mute-button").on("click", function() {
             audioElement.pause();
             console.log('audio off');
+        });
+
+        $('.slippy').click(function() {
+             var container = $('.morty'); // Container
+             var nodes = container.children(); // All children
+            for (var i = 1; i < nodes.length; i++) {
+                 // Move random child to the end
+                 container.append(nodes.eq(Math.floor(Math.random() * nodes.length)));
+            }
         });
 
     });

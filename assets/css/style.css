@@ -9,10 +9,12 @@ body {
       width: 100%;
       background: radial-gradient(#449217, #0aff9980);
       font: gold;
+      max-width: 640px;
+      text-align: center;
   }
 
   img {
-    max-width: 80px;
+    max-width: 360px;
     height: auto;
   }
   
@@ -21,18 +23,14 @@ body {
     font-size: 22px;
     color: #ffffff;
     padding: 13px;
-  }
-
-   #maingame {
-    font-family: 'Cinzel', serif;
-    font-size: 16px;
-    color: #ffffff;
+    text-align: center;
   }
 
   h2 {
     font-family: 'Cinzel', serif;
     font-size: 18px;
     color: #ffffff;
+    text-align: center;
   }
 
   h5 {
@@ -54,6 +52,7 @@ body {
     font-size: 18px;
     padding: 7px;
     color: #ffffff;
+
   }
 
 
@@ -67,42 +66,44 @@ body {
     font-family: 'Cinzel', serif;
   }
 
-  #flexcont {
-    display: flex; /* or inline-flex */
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #ritem {
-    flex-shrink: 6;
-  }
-
-  #flex-column {
-    display: flex; /* or inline-flex */
-    flex-direction: column;
-    justify-content: center;
-    width: 20%;
-    height: auto;
-  }
-
-  div {
-    width: auto;
-    height: auto;
-  }
-
   #totalscore {
-    max-width: 100px;
+    max-width: 80px;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    padding: 7px;
+    color: #ffffff;
   }
   #Wins {
-    max-width: 100px;
+    max-width: 80px;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    padding: 7px;
+    color: #ffffff;
   }
   #Losses {
-    max-width: 100px;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    padding: 7px;
+    color: #ffffff;
+    max-width: 80px;
   }
   #GoalNumber {
-    max-width: 100px;
+    max-width: 80px;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    padding: 7px;
+    color: #ffffff;
   }
 
-  #flex-row {
+  .seed {
+    max-width: 80px;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    padding: 7px;
+    color: #ffffff;
+  }
+
+  .flex-row {
     display: flex; /* or inline-flex */
     flex-direction: row;
     flex-wrap: nowrap;
@@ -110,13 +111,38 @@ body {
     height: auto;
     width: 100%;
   }
-
-  #col-item {
-    width: 100%;
+  .flex-column {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
     height: auto;
   }
 
-  #row-item {
+  .col-item {
+    width: 120px;
+    height: auto;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    padding: 7px;
+    color: #ffffff;
+  }
+
+  .row-item {
+    max-width: 80px;
     width: 20%;
+    height: auto;
+    padding: 12px;
+    margin: 7px;
+  }
+
+  #flexcont {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .ritem {
+    flex-shrink: 6;
+    background: #449217;
     height: auto;
   }
