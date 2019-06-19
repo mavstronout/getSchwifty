@@ -7,204 +7,63 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/style.css'>
     <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src='./js/main.js'></script>
-    <script src='./js/reset.js'></script>
+    <!-- <script src='./js/reset.js'></script> -->
 </head>
 <body>
-    <!-- Create start screen -->
-    <div id="intro" class="container">
-        <div id="title" class="item question" style="display: block">
-            Clicker Brawl
-        </div>
-        <div id="startg">
-            <h1>Clicker Classic</h1>
-            <button title="fight" onclick="startGame()" id="startbtn" class="menu-btn">F I G H T</button>
-            <h1>Bonus Modes</h1>
-            <button title="very easy" onclick="chooseDif1()">Strategy Mode (turn based)</button><br>
-            <button title="not difficult" onclick="chooseDif2()">Survival (eliminate all enemies)</button><br>
-        </div>
-        
-    </div>
-
-    <!-- Hidden, by comment or by css? Instructions screen -->
 
     
-    
-    <div id="startButton" style="display: none">
-
-        <h1>Click to Win.</h1>
-        <button onclick="start()">Start</button>
-        <p>Rules: Movement buttons or arrow keys to move.<br>
-            Try not to get cornered.<br>
-            Eliminate the enemies before the clock runs out.</p>
-
-    </div>
-
     <!-- Audio Control Buttons -->
 
     <div id="flexcont">
-        <div class="ritem">
-            <button class="btn play-button" id ="play-button"><i class="far fa-play-circle"></i></p>
-        </div>
-        <div class="ritem">
-            <button class="btn mute-button" id ="mute-button"><i class="far fa-pause-circle"></i></p>
-        </div>
-    </div>
-    
-
-    
-    <!-- Hidden Game Screen, needs updating -->
-
-    <div id="mainGame" style="display: none">
-        <!-- Create div elements for a flexbox grid of columns and rows -->
-        <div class="flex-row" value="1" title="y">
-            <div class="row-item" value="-1" title="x"></div>
-            <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
-            <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
-        </div>
-        <div class="flex-row" value="0.5" title="y">
-            <div class="row-item" value="-1" title="x"></div>
-            <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
-            <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
-        </div>
-        <div class="flex-row" value="0" title="y">
-            <div class="row-item" value="-1" title="x"></div>
-            <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
-            <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
-        </div>
-        <div class="flex-row" value="-0.5" title="y">
-            <div class="row-item" value="-1" title="x"></div>
-            <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
-            <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
-        </div>
-        <div class="flex-row" value="-1" title="y">
-            <div class="row-item" value="-1" title="x"></div>
-            <div class="row-item" value="-0.5" title="x"></div>
-            <div class="row-item" value="0" title="x"></div>
-            <div class="row-item" value="0.5" title="x"></div>
-            <div class="row-item" value="1" title="x"></div>
+            <div class="ritem">
+                <button class="btn play-button" id ="play-button"><i class="far fa-play-circle"></i></p>
+            </div>
+            <div class="ritem">
+                <button class="btn mute-button" id ="mute-button"><i class="far fa-pause-circle"></i></p>
+            </div>
         </div>
         
+    <!-- Create start screen -->
+    <div id="intro" class="container"  style="display: block">
+        <div id="title" class="item question" style="display: block">
+            Rick and Morty Collector
+        </div>
+        <div id="startg">
+            <h1>Rules</h1>
+            <p>Click the crystals to get swhifty<br>
+                You win the game by matching your total score to the randomly selected goal number, you lose the
+                game if your total score goes above the random number.<br>
+                The value of each crystal is hidden from you until you click on it.<br>
+                Each time when the game starts, the game will change the values of each crystal and the goal number will be selected again.
+            </p>
+        </div>
+        
+   
 
-    <div>
         <!-- Create functions for actions and organize these elements here -->
-        <div class="flex-row">
-            <div class="row-item" id="blank"></div>
-            <div class="row-item" id="up"><button class="btn" onclick="enterGuess()"><i class="fas fa-caret-up"></i></button></div>
-            <div class="row-item" id="blank"></div>
+        <div class="flex-column">
+            <div class="col-item"><h2> Goal Number: <div id="GoalNumber"></div></h2></div>
+            <div class="col-item"><h3>Current Crystal Total: <div id="totalscore"></div></h3></div>
+            <div class="col-item"><h3>Wins: <div id="Wins"></div></h3></div>
+            <div class="col-item"><h3>Losses: <div id="Losses"></div></h3></div>
         </div>
         <div class="flex-row">
-            <div class="row-item" id="left"><button class="btn" onclick="enterGuess()"><i class="fas fa-caret-left"></i></button></div>
-            <div class="row-item" id="attack"><button class="btn" onclick="enterGuess()"><i class="fal fa-axe"></i></button></div>
-            <div class="row-item" id="right"><button class="btn" onclick="enterGuess()"><i class="fas fa-caret-right"></i></button></div>
-        </div>
-        <div class="flex-row">
-            <div class="row-item" id="blank"></div>
-            <div class="row-item" id="down"><button class="btn" onclick="enterGuess()"><i class="fas fa-caret-down"></i></button></div>
-            <div class="row-item" id="blank"></div>
+            <div class="row-item"><button class="buttons" id="defense"><img src="assets/images/Defense_Mega_Seed.png"></button></div>
+            <div class="row-item"><button class="buttons" id="speed"><img src="assets/images/Speed_Mega_Seed.png"></button></div>
+            <div class="row-item"><button class="buttons" id="mega-seed"><img src="assets/images/seeds-clipart-semilla-7.png"></button></div>
+            <div class="row-item"><button class="buttons" id="plumbus"><img src="assets/images/plumbus.jpg"></button></div>
         </div>
     </div>
 
     </div>
-
-    <!-- Add html/css/js elements which display game-round information.
-            * Enemies remaining, health, damage, defense -->
-
-    <div class="flex-column" id="inventory" style="display: block">
-        <div class="col-item" id="name" value="player"><p>Yoda</p></div>
-        <div class="col-item" id="health" value="hp"><i class="fas fa-heartbeat"></i> <p id="life">100</p></div>
-        <div class="col-item" id="damage" value="dmg"><i class="fal fa-axe"></i> <p id="dmg">Damage: 5</p></div>
-        <div class="col-item" id="defense" value="def"><i class="fas fa-shield-alt"></i> <p id="def">Defense: 5 </p></div>
-    </div>
-    <div class="flex-column" id="inventory" style="display: block">
-        <div class="col-item" id="enemy-name" value="Enemy"><p></p></div>
-        <div class="col-item" id="health" value="hp"><i class="fas fa-heartbeat"></i> <p id="life">100</p></div>
-        <div class="col-item" id="damage" value="dmg"><i class="fal fa-axe"></i> <p id="dmg">Damage: 5</p></div>
-        <div class="col-item" id="defense" value="def"><i class="fas fa-shield-alt"></i> <p id="def">Defense: 5 </p></div>
-    </div>
-
-    <!-- To be depracated from previous template
-    <div id="RRguess" style="display: block"> 
-
-    <p class="btn" id="rightGuess"></p>
-    <div id="flexcont">
-        <div class="ritem">
-            <p class="btn" id ="wrongGuess"></p>
-        </div>
-        <div class="ritem">
-            <p class="btn" id ="guessesLeft"></p>
-        </div>
-    </div>
-    </div> -->
-
-    
-    
-        
-
-    <!-- Hidden Game Over Screen -->
-        
-    
-        <div id="youLose" class="btn" style="display: none">
-        
-            <h1>You lose, good day sir.</h1>
-
-            <div>
-                <button onclick="restart()">Play again?</button>
-            </div>
-            <!-- enemies remaining function? -->
-            <p id="correctWordWas"></p>
-
-        </div>
-
-        <div id="youWin" class="btn" style="display: none">
-
-            <h2>Test of Mouse: Complete.<br>
-                You are licensed for clicking.</h2>
-
-            <div>
-                <button onclick="restart()">Play again?</button>
-            </div>
-
-        </div>
-
-
-
-        <!-- Start Javascript functions, separate this code to js/main.js later -->
 
     <script>
-    
-    $(document).ready(function() {
-
-    });
-    // Constructors and Objects for Fighters
-
-    // Combat Actions
-
-    // Movement Actions
-
-    // Turn Order
-
-    // Time Over- Game End HTML; Create JS Timer using setTimeout() standard function;    
-        
-    // Game Start
-
-    // Instructions Screen
-
-    // Create grid (show HTML elements)
-
-
-    // Game Audio, leave this here for later
-
     $(document).ready(function() {
         var audioElement = document.createElement("audio");
         audioElement.setAttribute("src", "./assets/audio/EP1__Duel_Of_The_Fates__ver-1.mid");
@@ -216,6 +75,7 @@
             audioElement.pause();
             console.log('audio off');
         });
+
     });
 
 

@@ -1,63 +1,49 @@
 body {
-    background-color: darkgrey;
+    background-image: url("../images/portal-bg.jpg");
     background-size: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%)translateY(-50%);
     text-align: center;
   }
 
   .container {
       height: auto;
       width: 100%;
-      min-width: 400px;
-      max-width: 400px;
-      background: radial-gradient(cornflowerblue, #3557ce80);
+      background: radial-gradient(#449217, #0aff9980);
       font: gold;
+  }
+
+  img {
+    max-width: 80px;
+    height: auto;
   }
   
   h1 {
     font-family: 'Cinzel', serif;
-    font-size: 42px;
+    font-size: 22px;
     color: #ffffff;
     padding: 13px;
   }
 
    #maingame {
     font-family: 'Cinzel', serif;
-    font-size: 42px;
-    padding: 13px;
-    margin: 10px;
+    font-size: 16px;
     color: #ffffff;
   }
 
-  input {
-      height: 70px;
-      width: 42px;
-      border: none;
-      text-align: center;
-      font-size: 66px;
-      font-family: 'Cinzel', serif;
-  }
-  
   h2 {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
-    padding: 7px;
+    font-size: 18px;
     color: #ffffff;
   }
 
   h5 {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
-    padding: 7px;
+    font-size: 18px;
     color: #ffffff;
   }
 
   #startButton {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
+    font-size: 18px;
     padding: 7px;
     margin: 10px;
     color: #ffffff;
@@ -65,14 +51,7 @@ body {
 
   p {
     font-family: 'Cinzel', serif;
-    font-size: 36px;
-    padding: 7px;
-    color: #ffffff;
-  }
-
-  .question {
-    font-family: 'Cinzel', serif;
-    font-size: 36px;
+    font-size: 18px;
     padding: 7px;
     color: #ffffff;
   }
@@ -80,22 +59,12 @@ body {
 
   button {
     font-family: 'Cinzel', serif;
-    background-color: lightslategrey;
-    border-radius: 25px;
     text-decoration: none;
-    border: darkred 5px;
-    font-size: 32px;
-    padding: 10px;
-    margin: 5px;
-    color: #ffffff;
+    font-size: 18px;
   }
 
   .btn {
     font-family: 'Cinzel', serif;
-    background-color: lightslategrey;
-    text-decoration: none;
-    font-size: 32px;
-    color: #ffffff;
   }
 
   #flexcont {
@@ -110,25 +79,44 @@ body {
   #flex-column {
     display: flex; /* or inline-flex */
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 10%;
+    justify-content: center;
+    width: 20%;
     height: auto;
+  }
+
+  div {
+    width: auto;
+    height: auto;
+  }
+
+  #totalscore {
+    max-width: 100px;
+  }
+  #Wins {
+    max-width: 100px;
+  }
+  #Losses {
+    max-width: 100px;
+  }
+  #GoalNumber {
+    max-width: 100px;
   }
 
   #flex-row {
     display: flex; /* or inline-flex */
     flex-direction: row;
-    justify-content: space-evenly;
-    height: 15%;
-    width: auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: auto;
+    width: 100%;
   }
 
   #col-item {
-    width: auto;
+    width: 100%;
     height: auto;
   }
 
   #row-item {
-    width: auto;
+    width: 20%;
     height: auto;
   }
