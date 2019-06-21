@@ -7,7 +7,7 @@ body {
   .container {
       height: auto;
       width: 100%;
-      background: radial-gradient(#449217, #0aff9980);
+      background: radial-gradient(#449217b6, #0aff9925, #0aff9900);
       font: gold;
       max-width: 640px;
       text-align: center;
@@ -67,14 +67,12 @@ body {
   }
 
   #totalscore {
-    max-width: 80px;
     font-family: 'Cinzel', serif;
     font-size: 18px;
     padding: 7px;
     color: #ffffff;
   }
   #Wins {
-    max-width: 80px;
     font-family: 'Cinzel', serif;
     font-size: 18px;
     padding: 7px;
@@ -85,10 +83,10 @@ body {
     font-size: 18px;
     padding: 7px;
     color: #ffffff;
-    max-width: 80px;
+
   }
   #GoalNumber {
-    max-width: 80px;
+
     font-family: 'Cinzel', serif;
     font-size: 18px;
     padding: 7px;
@@ -96,11 +94,8 @@ body {
   }
 
   .seed {
-    max-width: 80px;
+    max-width: 240px;
     font-family: 'Cinzel', serif;
-    font-size: 18px;
-    padding: 7px;
-    color: #ffffff;
   }
 
   .flex-row {
@@ -110,7 +105,30 @@ body {
     justify-content: center;
     height: auto;
     width: 100%;
+    align-content: center;
   }
+  
+  .row-item {
+    max-width: 260px;
+    width: 25%;
+    height: auto;
+  }
+
+  .o-flex-row {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+  }
+  
+  .o-row-item {
+    max-width: 80px;
+    width: 24%;
+    height: auto;
+  }
+
   .flex-column {
     display: flex; 
     flex-direction: column;
@@ -128,21 +146,15 @@ body {
     color: #ffffff;
   }
 
-  .row-item {
-    max-width: 80px;
-    width: 20%;
-    height: auto;
-    padding: 12px;
-    margin: 7px;
-  }
 
   #flexcont {
     display: flex; 
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
   }
   .ritem {
     flex-shrink: 6;
     background: #449217;
-    height: auto;
+    height: fit-content;
+    
   }
