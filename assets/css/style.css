@@ -95,6 +95,7 @@ body {
 
   .seed {
     max-width: 240px;
+    width: 100%;
     font-family: 'Cinzel', serif;
   }
 
