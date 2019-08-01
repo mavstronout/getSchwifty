@@ -1,7 +1,6 @@
-### Option 1: Crystal Collector
+### Crystal Collector Game: Rick and Morty Edition
 - Play now at: https://mavstronout.github.io/getSchwifty/
 
-# Rick and morty Edition.
 ## Game Overview: 
 - Get Schwifty theme
 - Slippery Rick, clumsy morty shuffles the prizes around to be less predictable
@@ -11,4 +10,4 @@
 
 # Example Images
 
-![getschwifty](https://user-images.githubusercontent.com/16119635/62294243-82f87500-b438-11e9-834e-c8644d7d4038.png)
+![get-schwifty](https://user-images.githubusercontent.com/16119635/62295998-44fd5000-b43c-11e9-9609-4fdc390a22cd.png)
