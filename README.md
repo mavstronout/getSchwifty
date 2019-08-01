@@ -1,4 +1,5 @@
 ### Option 1: Crystal Collector
+- Play now at: https://mavstronout.github.io/getSchwifty/
 
 # Rick and morty Edition.
 ## Game Overview: 
